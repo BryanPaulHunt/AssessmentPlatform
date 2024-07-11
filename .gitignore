@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/assessment-platform-developer-main/.vs/assessment-platform-developer/FileContentIndex/972ff158-2d99-4552-bf63-feb91169b99c.vsidx
+/assessment-platform-developer-main/.vs/assessment-platform-developer/FileContentIndex/ee09239b-bd58-4789-8b79-e368c7fcae80.vsidx
+*.dll
+/assessment-platform-developer-main/assessment-platform-developer/bin/roslyn
+/assessment-platform-developer-main/assessment-platform-developer/bin
+/assessment-platform-developer-main/assessment-platform-developer/obj/Debug
+/assessment-platform-developer-main/packages
