@@ -23,5 +23,39 @@ namespace assessment_platform_developer.Utilities
             }
         }
 
+        public static void FillDropDownWithCustomers(DropDownList comboBox, List<Customer> customers, String selectableValue="0",string defaultValue="")
+        {
+            comboBox.Items.Clear();
+
+            foreach (Customer c in customers)
+            {
+                AddOneCustomerToDropDown(comboBox, c, selectableValue);
+            }
+
+            if (defaultValue != "") {
+                ListItem li = new ListItem();
+                li.Text = defaultValue;
+                li.Value = "0";
+                if (li.Value == selectableValue)
+                {
+                    li.Selected = true;
+                }
+                comboBox.Items.Add(li);
+            }
+        }
+
+        public static void AddOneCustomerToDropDown(DropDownList comboBox, Customer customer, String selectableValue = "0")
+        {
+            ListItem li = new ListItem();
+            li.Text = customer.Name;
+            li.Value = customer.ID.ToString();
+
+            if (li.Value == selectableValue)
+            {
+                li.Selected = true;
+            }
+            comboBox.Items.Add(li);
+        }
+
     }
 }

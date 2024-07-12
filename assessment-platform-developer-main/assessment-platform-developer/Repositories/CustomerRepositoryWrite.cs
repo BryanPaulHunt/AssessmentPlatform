@@ -25,7 +25,19 @@ namespace assessment_platform_developer.Repositories
                 // Update properties of existingCustomer based on the properties of customer
                 // For example:
                 existingCustomer.Name = customer.Name;
-                // Repeat for other properties
+                existingCustomer.Email = customer.Email;
+                existingCustomer.Phone = customer.Phone;
+                existingCustomer.Notes = customer.Notes;
+                existingCustomer.CompleteAddress.Address = customer.CompleteAddress.Address;
+                existingCustomer.CompleteAddress.City = customer.CompleteAddress.City;
+                existingCustomer.CompleteAddress.State = customer.CompleteAddress.State;
+                existingCustomer.CompleteAddress.Zip = customer.CompleteAddress.Zip;
+                existingCustomer.CompleteAddress.Country = customer.CompleteAddress.Country;
+                existingCustomer.Contact.Title = customer.Contact.Title;
+                existingCustomer.Contact.Name = customer.Contact.Name;
+                existingCustomer.Contact.Phone = customer.Contact.Phone;
+                existingCustomer.Contact.Email = customer.Contact.Email;
+                existingCustomer.Contact.Notes = customer.Contact.Notes;
             }
         }
 

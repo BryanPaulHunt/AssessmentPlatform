@@ -29,5 +29,10 @@ namespace assessment_platform_developer.Services
         {
             return customerRepository.Get(id);
         }
+        public int GetNextID()
+        {
+            return customerRepository.GetNextID();
+
+        }
     }
 }

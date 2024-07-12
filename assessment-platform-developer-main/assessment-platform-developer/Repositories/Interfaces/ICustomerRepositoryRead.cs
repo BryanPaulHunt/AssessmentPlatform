@@ -12,5 +12,6 @@ namespace assessment_platform_developer.Repositories.Interfaces
     {
         IEnumerable<Customer> GetAll();
         Customer Get(int id);
+        int GetNextID();
     }
 }

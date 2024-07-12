@@ -20,5 +20,17 @@ namespace assessment_platform_developer.Repositories
         {
             return Database.Customers.FirstOrDefault(c => c.ID == id);
         }
+
+        public int GetNextID()
+        {
+            int biggestID = 0;
+
+            foreach (Customer customer in Database.Customers)
+            {
+                if (customer.ID > biggestID) { biggestID = customer.ID; }
+            }
+
+            return biggestID + 1;
+        }
     }
 }

@@ -10,14 +10,20 @@ using Container = SimpleInjector.Container;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using assessment_platform_developer.Services.Interfaces;
+using System.Security.Policy;
+using System.Web.Security;
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
 
 namespace assessment_platform_developer
 {
 	public partial class Customers : Page
 	{
 		private static List<Customer> customers = new List<Customer>();
+        private static string customerListValue = "0";
+        private static Customer currentCustomer = null;
 
-		protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!IsPostBack)
 			{
@@ -26,14 +32,22 @@ namespace assessment_platform_developer
 
 				var allCustomers = customerServiceRead.GetAllCustomers();
 				ViewState["Customers"] = allCustomers;
+                ViewState["CustListValue"] = "0";
+                ViewState["CurrCust"] = null;
                 PopulateCustomerCountryList();
+                PopulateCustomerListBox();
+                AddButton.Enabled = true;
+                EditButton.Enabled = false;
+                DeleteButton.Enabled = false;
             }
             else
 			{
 				customers = (List<Customer>)ViewState["Customers"];
-			}
-            PopulateCustomerListBox();
+                customerListValue = (string)ViewState["CustListValue"];
+                currentCustomer = (Customer)ViewState["CurrCust"];
+            }
 
+     
         }
 
         private void PopulateCustomerCountryList()
@@ -54,7 +68,27 @@ namespace assessment_platform_developer
 			PopulateCustomerProvinceStateDropDownList();
         }
 
-		//I Added this method to populate the states or provinces dependant on country
+        //When the country changes, update the states or provinces
+        protected void CustomerDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            customerListValue= CustomersDDL.SelectedValue;
+            ViewState["CustListValue"] = CustomersDDL.SelectedValue;
+
+            int custID = 0;
+
+            Int32.TryParse(customerListValue, out custID);
+
+            if (custID == 0)
+            {
+                ResetForm();
+            }
+            else
+            {
+                ShowCustomer(custID);
+            }
+        }
+
+        //I Added this method to populate the states or provinces dependant on country
         private void PopulateCustomerProvinceStateDropDownList()
 		{
 			StateDropDownList.Items.Clear();
@@ -71,27 +105,76 @@ namespace assessment_platform_developer
 
 		protected void PopulateCustomerListBox()
 		{
-			CustomersDDL.Items.Clear();
-			var storedCustomers = customers.Select(c => new ListItem(c.Name)).ToArray();
-			if (storedCustomers.Length != 0)
-			{
-				CustomersDDL.Items.AddRange(storedCustomers);
-				CustomersDDL.SelectedIndex = 0;
-				return;
-			}
+            Utilities.DropDownUtils.FillDropDownWithCustomers(CustomersDDL, customers, customerListValue, "Add new customer");
 
-			CustomersDDL.Items.Add(new ListItem("Add new customer"));
-		}
+            return;
+        }
 
-		protected void AddButton_Click(object sender, EventArgs e)
+        protected void AddButton_Click(object sender, EventArgs e)
 		{
-			var customer = new Customer
-			{
+            AddCustomer();
+            ResetForm();
+        }
+
+        protected void EditButton_Click(object sender, EventArgs e)
+        {
+            EditCustomer();
+        }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            DeleteCustomer();
+        }
+
+        private void ShowCustomer(int id)
+        {
+            var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
+            var customerServiceRead = testContainer.GetInstance<ICustomerServiceRead>();
+
+            Customer customer = customerServiceRead.GetCustomer(id);
+
+            if (customer != null)
+            {
+                currentCustomer = customer;
+                ViewState["CurrCust"] = customer;
+
+                FormTitle.Text = "Edit Contact";
+                CustomerName.Text= customer.Name;
+                CustomerEmail.Text=customer.Email;
+                CustomerPhone.Text = customer.Phone;
+                CustomerNotes.Text = customer.Notes;
+                CustomerAddress.Text = customer.CompleteAddress.Address;
+                CustomerCity.Text = customer.CompleteAddress.City;
+                CountryDropDownList.SelectedValue = customer.CompleteAddress.Country;
+                StateDropDownList.SelectedValue = customer.CompleteAddress.State;
+                CustomerZip.Text = customer.CompleteAddress.Zip;
+                ContactTitle.Text = customer.Contact.Title;
+                ContactName.Text = customer.Contact.Name;
+                ContactPhone.Text = customer.Contact.Phone;
+                ContactEmail.Text = customer.Contact.Email;
+                ContactNotes.Text = customer.Contact.Notes;
+                AddButton.Enabled = false;
+                EditButton.Enabled = true;
+                DeleteButton.Enabled = true;
+            }
+        }
+
+
+        //I put this in it's own function so it was seperate from GUI stuff
+        private void AddCustomer()
+        {
+            var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
+            var customerServiceRead = testContainer.GetInstance<ICustomerServiceRead>();
+            var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
+
+            var customer = new Customer
+            {
+                ID = customerServiceRead.GetNextID(),
                 Name = CustomerName.Text,
                 Email = CustomerEmail.Text,
                 Phone = CustomerPhone.Text,
                 Notes = CustomerNotes.Text,
-	            CompleteAddress = new CustomerAddress //Modified to use the sub objects
+                CompleteAddress = new CustomerAddress //Modified to use the sub objects
                 {
                     Address = CustomerAddress.Text,
                     City = CustomerCity.Text,
@@ -99,28 +182,76 @@ namespace assessment_platform_developer
                     Zip = CustomerZip.Text,
                     Country = CountryDropDownList.SelectedValue,
                 },
-				Contact = new CustomerContact //Modified to use the sub objects
-				{
+                Contact = new CustomerContact //Modified to use the sub objects
+                {
+                    Title = ContactTitle.Text, //I added the title field
                     Name = ContactName.Text,
-                    Phone = CustomerPhone.Text,
-                    Email = CustomerEmail.Text
+                    Phone = ContactPhone.Text, //These two were in error, I pointed them to the right fields
+                    Email = ContactEmail.Text, //These two were in error, I pointed them to the right fields
+                    Notes = ContactNotes.Text, //I added the notes field
                 }
-			};
+            };
 
-			var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
-			var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
             customerServiceWrite.AddCustomer(customer);
-			customers.Add(customer);
+            customers.Add(customer);
 
-			CustomersDDL.Items.Add(new ListItem(customer.Name));
-			ResetForm();
-
+            Utilities.DropDownUtils.AddOneCustomerToDropDown(CustomersDDL, customer);
         }
 
+        private void EditCustomer()
+        {
+            var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
+            var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
+
+            if (currentCustomer != null)
+            {
+                currentCustomer.Name = CustomerName.Text;
+                currentCustomer.Email = CustomerEmail.Text;
+                currentCustomer.Phone = CustomerPhone.Text;
+                currentCustomer.Notes = CustomerNotes.Text;
+                currentCustomer.CompleteAddress.Address = CustomerAddress.Text;
+                currentCustomer.CompleteAddress.City = CustomerCity.Text;
+                currentCustomer.CompleteAddress.State = StateDropDownList.SelectedValue;
+                currentCustomer.CompleteAddress.Zip = CustomerZip.Text;
+                currentCustomer.CompleteAddress.Country = CountryDropDownList.SelectedValue;
+                currentCustomer.Contact.Title = ContactTitle.Text;
+                currentCustomer.Contact.Name = ContactName.Text;
+                currentCustomer.Contact.Phone = ContactPhone.Text;
+                currentCustomer.Contact.Email = ContactEmail.Text;
+                currentCustomer.Contact.Notes = ContactNotes.Text;
+
+                customerServiceWrite.UpdateCustomer(currentCustomer);
+                for (int i = 0; i < customers.Count; i++)
+                {
+                    if (customers[i].ID == currentCustomer.ID)
+                    {
+                        customers[i] = currentCustomer;
+                    }
+                }
+
+                CustomersDDL.Items[CustomersDDL.SelectedIndex].Text= CustomerName.Text;
+            }
+        }
+
+        private void DeleteCustomer()
+        {
+            var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
+            var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
+
+            if (currentCustomer != null)
+            {
+                customerServiceWrite.DeleteCustomer(currentCustomer.ID);
+                customers.Remove(currentCustomer);
+
+                CustomersDDL.Items.RemoveAt(CustomersDDL.SelectedIndex);
+                ResetForm();
+            }
+        }
 
         //Added a reset form method to clean up AddButton_Click
         private void ResetForm()
 		{
+            FormTitle.Text = "Add Contact";
             CustomerName.Text = string.Empty;
             CustomerAddress.Text = string.Empty;
             CustomerEmail.Text = string.Empty;
@@ -130,9 +261,14 @@ namespace assessment_platform_developer
             CustomerZip.Text = string.Empty;
             CountryDropDownList.SelectedIndex = 0;
             CustomerNotes.Text = string.Empty;
+            ContactTitle.Text = string.Empty;
             ContactName.Text = string.Empty;
             ContactPhone.Text = string.Empty;
             ContactEmail.Text = string.Empty;
+            ContactNotes.Text = string.Empty;
+            AddButton.Enabled = true;
+            EditButton.Enabled = false;
+            DeleteButton.Enabled = false;
         }
-	}
+    }
 }
