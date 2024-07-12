@@ -75,8 +75,9 @@ namespace assessment_platform_developer
 
 			container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
-			// 2. Configure the container (register)
-			container.Register<ICustomerRepositoryRead, CustomerRepositoryRead>(Lifestyle.Singleton);
+            // 2. Configure the container (register)
+            // -changed to implement the Command and Query Responsibility Segregation (CQRS) pattern
+            container.Register<ICustomerRepositoryRead, CustomerRepositoryRead>(Lifestyle.Singleton);
             container.Register<ICustomerRepositoryWrite, CustomerRepositoryWrite>(Lifestyle.Singleton);
             container.Register<ICustomerServiceRead, CustomerServiceRead>(Lifestyle.Scoped);
             container.Register<ICustomerServiceWrite, CustomerServiceWrite>(Lifestyle.Scoped);

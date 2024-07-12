@@ -6,6 +6,8 @@ using System.Web;
 
 namespace assessment_platform_developer.Repositories.Interfaces
 {
+    //Interface for Write repository
+    // -Split out to implement the Command and Query Responsibility Segregation (CQRS) pattern
     public interface ICustomerRepositoryWrite
     {
         void Add(Customer customer);

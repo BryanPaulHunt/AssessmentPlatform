@@ -7,6 +7,8 @@ using System.Web;
 
 namespace assessment_platform_developer.Repositories
 {
+    //Read Repository Class
+    // -Split out to implement the Command and Query Responsibility Segregation (CQRS) pattern
     public class CustomerRepositoryRead: ICustomerRepositoryRead
     {
         public IEnumerable<Customer> GetAll()

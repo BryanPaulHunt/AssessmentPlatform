@@ -9,6 +9,8 @@ using System.Web;
 
 namespace assessment_platform_developer.Services
 {
+    //Write Service Class
+    // -Split out to implement the Command and Query Responsibility Segregation (CQRS) pattern
     public class CustomerServiceWrite: ICustomerServiceWrite
     {
         private readonly ICustomerRepositoryWrite customerRepository;
