@@ -51,6 +51,7 @@ namespace assessment_platform_developer
      
         }
 
+        #region listboxes
         private void PopulateCustomerCountryList()
 		{
 			//I refactered the combo population code as it was duplicate code really
@@ -110,7 +111,9 @@ namespace assessment_platform_developer
 
             return;
         }
+        #endregion
 
+        #region buttons
         protected void AddButton_Click(object sender, EventArgs e)
 		{
             AddCustomer();
@@ -118,14 +121,17 @@ namespace assessment_platform_developer
 
         protected void EditButton_Click(object sender, EventArgs e)
         {
-            EditCustomer();
+            UpdateCustomer();
         }
 
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
             DeleteCustomer();
         }
+        #endregion
 
+        #region 'methods actually doing some work'
+        //Show a customer for edit
         private void ShowCustomer(int id)
         {
             var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
@@ -203,7 +209,8 @@ namespace assessment_platform_developer
 
         }
 
-        private void EditCustomer()
+        //Commit changes to the customer (update)
+        private void UpdateCustomer()
         {
             var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
             var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
@@ -241,6 +248,7 @@ namespace assessment_platform_developer
             }
         }
 
+        //Delete a customer
         private void DeleteCustomer()
         {
             var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
@@ -256,7 +264,7 @@ namespace assessment_platform_developer
             }
         }
 
-        //Added a reset form method to clean up AddButton_Click
+        //Added a reset form method to clean up code
         private void ResetForm()
 		{
             FormTitle.Text = "Add Contact";
@@ -278,7 +286,9 @@ namespace assessment_platform_developer
             EditButton.Enabled = false;
             DeleteButton.Enabled = false;
         }
+        #endregion
 
+        #region validations
         protected void CustomerZipValidation_Validate(object source, ServerValidateEventArgs args)
         {
             try
@@ -293,5 +303,6 @@ namespace assessment_platform_developer
                 args.IsValid = false;
             }
         }
+        #endregion
     }
 }

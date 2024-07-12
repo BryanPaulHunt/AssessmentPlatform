@@ -9,6 +9,7 @@ namespace assessment_platform_developer.Utilities
 {
     public static class DropDownUtils
     {
+        //Populates a combo with enum values (got rid of duplicate code)
         public static void FillDropDownWithEnum(DropDownList comboBox, Type E) 
         {
             comboBox.Items.Clear();
@@ -23,6 +24,7 @@ namespace assessment_platform_developer.Utilities
             }
         }
 
+        //Populates a combo with customers
         public static void FillDropDownWithCustomers(DropDownList comboBox, List<Customer> customers, String selectableValue="0",string defaultValue="")
         {
             comboBox.Items.Clear();
@@ -44,6 +46,7 @@ namespace assessment_platform_developer.Utilities
             }
         }
 
+        //Gets a list item for a customer to add to a combo
         public static void AddOneCustomerToDropDown(DropDownList comboBox, Customer customer, String selectableValue = "0")
         {
             ListItem li = new ListItem();

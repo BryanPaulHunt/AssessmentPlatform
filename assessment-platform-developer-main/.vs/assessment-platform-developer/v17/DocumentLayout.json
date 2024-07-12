@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\utilities\\dropdownutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\utilities\\dropdownutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\customers.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\customers.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C0028240-87DC-4B8E-8DFE-9294D31F07E3}|assessment-platform-developer.Tests\\assessment-platform-developer.Tests.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer.tests\\postalzipvalidatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0028240-87DC-4B8E-8DFE-9294D31F07E3}|assessment-platform-developer.Tests\\assessment-platform-developer.Tests.csproj|solutionrelative:assessment-platform-developer.tests\\postalzipvalidatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\customers.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\customers.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\customers.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\customers.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\repositories\\customerrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\services\\interfaces\\icustomerservicewrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\services\\interfaces\\icustomerservicewrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\utilities\\dropdownutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\utilities\\dropdownutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\services\\interfaces\\icustomerserviceread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,17 +102,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Customers.aspx.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Customers.aspx.cs",
               "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx.cs",
               "RelativeToolTip": "assessment-platform-developer\\Customers.aspx.cs",
-              "ViewState": "AQIAALUAAAAAAAAAAAApwMEAAAAVAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwCABAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-11T20:51:04.404Z",
               "EditorCaption": ""
@@ -120,6 +120,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "CustomerContact.cs",
+              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\CustomerContact.cs",
+              "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\CustomerContact.cs",
+              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\CustomerContact.cs",
+              "RelativeToolTip": "assessment-platform-developer\\Models\\CustomerContact.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T20:46:59.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Customers.aspx",
+              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx",
+              "RelativeDocumentMoniker": "assessment-platform-developer\\Customers.aspx",
+              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx",
+              "RelativeToolTip": "assessment-platform-developer\\Customers.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-07-10T22:11:05.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PostalZipValidatorTests.cs",
+              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
+              "RelativeDocumentMoniker": "assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
+              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
+              "RelativeToolTip": "assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T21:18:56.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ZipPostalValidator.cs",
+              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "RelativeDocumentMoniker": "assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "RelativeToolTip": "assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAQwCUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T21:17:22.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DropDownUtils.cs",
+              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Utilities\\DropDownUtils.cs",
+              "RelativeDocumentMoniker": "assessment-platform-developer\\Utilities\\DropDownUtils.cs",
+              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Utilities\\DropDownUtils.cs",
+              "RelativeToolTip": "assessment-platform-developer\\Utilities\\DropDownUtils.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowC4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T21:48:23.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Customer.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\Customer.cs",
@@ -133,58 +198,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "CustomerContact.cs",
-              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\CustomerContact.cs",
-              "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\CustomerContact.cs",
-              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\CustomerContact.cs",
-              "RelativeToolTip": "assessment-platform-developer\\Models\\CustomerContact.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T20:46:59.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Customers.aspx",
-              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx",
-              "RelativeDocumentMoniker": "assessment-platform-developer\\Customers.aspx",
-              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx",
-              "RelativeToolTip": "assessment-platform-developer\\Customers.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-07-10T22:11:05.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PostalZipValidatorTests.cs",
-              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
-              "RelativeDocumentMoniker": "assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
-              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
-              "RelativeToolTip": "assessment-platform-developer.Tests\\PostalZipValidatorTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:18:56.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ZipPostalValidator.cs",
-              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
-              "RelativeDocumentMoniker": "assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
-              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
-              "RelativeToolTip": "assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAQwCUAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T21:17:22.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "CustomerRepositoryWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\CustomerRepositoryWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\CustomerRepositoryWrite.cs",
@@ -197,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CustomerRepositoryRead.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
@@ -210,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ICustomerRepositoryWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\Interfaces\\ICustomerRepositoryWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\Interfaces\\ICustomerRepositoryWrite.cs",
@@ -223,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CustomerServiceWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Services\\CustomerServiceWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Services\\CustomerServiceWrite.cs",
@@ -236,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "CustomerServiceRead.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Services\\CustomerServiceRead.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Services\\CustomerServiceRead.cs",
@@ -249,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ICustomerServiceWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Services\\Interfaces\\ICustomerServiceWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Services\\Interfaces\\ICustomerServiceWrite.cs",
@@ -258,19 +271,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwA0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-12T16:09:43.767Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DropDownUtils.cs",
-              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Utilities\\DropDownUtils.cs",
-              "RelativeDocumentMoniker": "assessment-platform-developer\\Utilities\\DropDownUtils.cs",
-              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Utilities\\DropDownUtils.cs",
-              "RelativeToolTip": "assessment-platform-developer\\Utilities\\DropDownUtils.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:48:23.676Z",
               "EditorCaption": ""
             },
             {

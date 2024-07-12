@@ -7,7 +7,9 @@ namespace assessment_platform_developer.Tests
 	[TestClass]
 	public class PostalZipValidatorTests
 	{
+        //I thought it best to do this as a Data Test Method with many variations
 		[DataTestMethod]
+        [DataRow("Canada", "", false)]
         [DataRow("Canada", "V0G 1M0", true)]
         [DataRow("Canada", "Giraffe", false)]
         [DataRow("Canada", "T3T 2T2", true)]
@@ -18,10 +20,12 @@ namespace assessment_platform_developer.Tests
         [DataRow("United States", "Caserole", false)]
         [DataRow("United States", "V0G 1M0", false)]
         [DataRow("United States", "T3T 2T2", false)]
+        [DataRow("United States", "", false)]
         [DataRow("France", "T3T 2T2", false)]
         [DataRow("England", "90210", false)]
         [DataRow("Australia", "Giraffe", false)]
         [DataRow("Zimbabwe", "90210-1122", false)]
+        [DataRow("", "", false)]
         [DataRow("Chile", "V0G 1M0", false)]
         public void ValidatorTest(string country, string code, bool result)
 		{
