@@ -215,10 +215,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Countries.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerAddress.cs" />
+    <Compile Include="Models\CustomerContact.cs" />
+    <Compile Include="Models\CustomerDBContext.cs" />
+    <Compile Include="Repositories\CustomerRepositoryRead.cs" />
+    <Compile Include="Repositories\CustomerRepositoryWrite.cs" />
+    <Compile Include="Repositories\Database.cs" />
+    <Compile Include="Repositories\Interfaces\ICustomerRepositoryRead.cs" />
+    <Compile Include="Repositories\Interfaces\ICustomerRepositoryWrite.cs" />
+    <Compile Include="Services\CustomerServiceRead.cs" />
+    <Compile Include="Services\CustomerServiceWrite.cs" />
+    <Compile Include="Services\Interfaces\ICustomerServiceRead.cs" />
+    <Compile Include="Services\Interfaces\ICustomerServiceWrite.cs" />
+    <Compile Include="Utilities\DropDownUtils.cs" />
+    <Compile Include="Models\Identity.cs" />
+    <Compile Include="Models\Interfaces\IAddress.cs" />
+    <Compile Include="Models\Interfaces\IIdentifyable.cs" />
+    <Compile Include="Models\StatesProvinces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CustomersRepository.cs" />
-    <Compile Include="Services\CustomersService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

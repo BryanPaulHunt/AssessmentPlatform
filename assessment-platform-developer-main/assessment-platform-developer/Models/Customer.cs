@@ -3,125 +3,43 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 
 namespace assessment_platform_developer.Models
 {
-	public enum Countries
-	{
-		Canada,
-		[Description("United States")]
-		UnitedStates
-	}
-	public enum USStates
-	{
-		Alabama,
-		Alaska,
-		Arizona,
-		Arkansas,
-		California,
-		Colorado,
-		Connecticut,
-		Delaware,
-		Florida,
-		Georgia,
-		Hawaii,
-		Idaho,
-		Illinois,
-		Indiana,
-		Iowa,
-		Kansas,
-		Kentucky,
-		Louisiana,
-		Maine,
-		Maryland,
-		Massachusetts,
-		Michigan,
-		Minnesota,
-		Mississippi,
-		Missouri,
-		Montana,
-		Nebraska,
-		Nevada,
-		[Description("New Hampshire")]
-		NewHampshire,
-		[Description("New Jersey")]
-		NewJersey,
-		[Description("New Mexico")]
-		NewMexico,
-		[Description("New York")]
-		NewYork,
-		[Description("North Carolina")]
-		NorthCarolina,
-		[Description("North Dakota")]
-		NorthDakota,
-		Ohio,
-		Oklahoma,
-		Oregon,
-		Pennsylvania,
-		[Description("Rhode Island")]
-		RhodeIsland,
-		[Description("South Carolina")]
-		SouthCarolina,
-		[Description("South Dakota")]
-		SouthDakota,
-		Tennessee,
-		Texas,
-		Utah,
-		Vermont,
-		Virginia,
-		Washington,
-		[Description("West Virginia")]
-		WestVirginia,
-		Wisconsin,
-		Wyoming
-	}
 
-	public enum CanadianProvinces
-	{
-		Alberta,
-		[Description("British Columbia")]
-		BritishColumbia,
-		Manitoba,
-		NewBrunswick,
-		[Description("Newfoundland and Labrador")]
-		NewfoundlandAndLabrador,
-		[Description("Northwest Territories")]
-		NovaScotia,
-		Ontario,
-		[Description("Prince Edward Island")]
-		PrinceEdwardIsland,
-		Quebec,
-		Saskatchewan,
-		[Description("Yukon")]
-		NorthwestTerritories,
-		Nunavut,
-		Yukon
-	}
-
+    // Due to the Single Responsibility Principle of SOLID, I moved
+    // Address and Contact into seperate objects as they represent 
+    // different concepts that could potentially do different things
 	[Serializable]
-	public class Customer
-	{
+	public class Customer: Identity
+    {
 		public int ID { get; set; }
-		public string Name { get; set; }
-		public string Address { get; set; }
-		public string Email { get; set; }
-		public string Phone { get; set; }
-		public string City { get; set; }
-		public string State { get; set; }
-		public string Zip { get; set; }
-		public string Country { get; set; }
-		public string Notes { get; set; }
-		public string ContactName { get; set; }
-		public string ContactPhone { get; set; }
-		public string ContactEmail { get; set; }
-		public string ContactTitle { get; set; }
-		public string ContactNotes { get; set; }
+  
+        public CustomerAddress CompleteAddress { get; set; }
 
-	}
+		public CustomerContact Contact { get; set; }
 
-	public class CustomerDBContext : DbContext
-	{
-		public DbSet<Customer> Customers { get; set; }
-	}
+        //I have left these methods here with respect to the OPEN/CLOSED principle of SOLID
+        // If any other components used thsi model and the old accessors, it would not break them
+        #region "deprecated methods"
+
+        public string Address { get { return CompleteAddress.Address; } set { CompleteAddress.Address=value; } }
+        public string City { get { return CompleteAddress.City; } set { CompleteAddress.City = value; } }
+        public string State { get { return CompleteAddress.State; } set { CompleteAddress.State = value; } }
+        public string Zip { get { return CompleteAddress.Zip; } set { CompleteAddress.Zip = value; } }
+        public string Country { get { return CompleteAddress.Country; } set { CompleteAddress.Country = value; } }
+
+        public string ContactName { get {return Contact.Name; } set { Contact.Name = value; }}
+        public string ContactPhone { get { return Contact.Phone; } set { Contact.Phone = value; } }
+        public string ContactEmail { get { return Contact.Email; } set { Contact.Email = value; } }
+        public string ContactTitle { get { return Contact.Title; } set { Contact.Title = value; } }
+        public string ContactNotes { get { return Contact.Notes; } set { Contact.Notes = value; } }
+
+        #endregion
+    }
+
+
+
 }

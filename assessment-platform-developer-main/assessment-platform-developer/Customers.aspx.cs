@@ -7,6 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using assessment_platform_developer.Services;
 using Container = SimpleInjector.Container;
+using Newtonsoft.Json.Linq;
+using System.IO;
+using assessment_platform_developer.Services.Interfaces;
 
 namespace assessment_platform_developer
 {
@@ -19,48 +22,52 @@ namespace assessment_platform_developer
 			if (!IsPostBack)
 			{
 				var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
-				var customerService = testContainer.GetInstance<ICustomerService>();
+				var customerServiceRead = testContainer.GetInstance<ICustomerServiceRead>();
 
-				var allCustomers = customerService.GetAllCustomers();
+				var allCustomers = customerServiceRead.GetAllCustomers();
 				ViewState["Customers"] = allCustomers;
-			}
-			else
+                PopulateCustomerCountryList();
+            }
+            else
 			{
 				customers = (List<Customer>)ViewState["Customers"];
 			}
+            PopulateCustomerListBox();
 
-			PopulateCustomerListBox();
-			PopulateCustomerDropDownLists();
-		}
+        }
 
-		private void PopulateCustomerDropDownLists()
+        private void PopulateCustomerCountryList()
 		{
+			//I refactered the combo population code as it was duplicate code really
+            Utilities.DropDownUtils.FillDropDownWithEnum(CountryDropDownList, typeof(Countries));
 
-			var countryList = Enum.GetValues(typeof(Countries))
-				.Cast<Countries>()
-				.Select(c => new ListItem
-				{
-					Text = c.ToString(),
-					Value = ((int)c).ToString()
-				})
-				.ToArray();
+            CountryDropDownList.SelectedValue = ((int)Countries.Canada).ToString();
 
-			CountryDropDownList.Items.AddRange(countryList);
-			CountryDropDownList.SelectedValue = ((int)Countries.Canada).ToString();
+			//After initial selection, update the provinces
+			PopulateCustomerProvinceStateDropDownList();
+        }
 
 
-			var provinceList = Enum.GetValues(typeof(CanadianProvinces))
-				.Cast<CanadianProvinces>()
-				.Select(p => new ListItem
-				{
-					Text = p.ToString(),
-					Value = ((int)p).ToString()
-				})
-				.ToArray();
+		//When the country changes, update the states or provinces
+        protected void CountryDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			PopulateCustomerProvinceStateDropDownList();
+        }
 
-			StateDropDownList.Items.Add(new ListItem(""));
-			StateDropDownList.Items.AddRange(provinceList);
-		}
+		//I Added this method to populate the states or provinces dependant on country
+        private void PopulateCustomerProvinceStateDropDownList()
+		{
+			StateDropDownList.Items.Clear();
+
+            if (CountryDropDownList.SelectedValue == ((int)Countries.Canada).ToString())
+			{
+                Utilities.DropDownUtils.FillDropDownWithEnum(StateDropDownList, typeof(CanadianProvinces));
+            }
+            else if (CountryDropDownList.SelectedValue == ((int)Countries.UnitedStates).ToString())
+            {
+				Utilities.DropDownUtils.FillDropDownWithEnum(StateDropDownList, typeof(USStates));
+            }
+        }
 
 		protected void PopulateCustomerListBox()
 		{
@@ -80,39 +87,52 @@ namespace assessment_platform_developer
 		{
 			var customer = new Customer
 			{
-				Name = CustomerName.Text,
-				Address = CustomerAddress.Text,
-				City = CustomerCity.Text,
-				State = StateDropDownList.SelectedValue,
-				Zip = CustomerZip.Text,
-				Country = CountryDropDownList.SelectedValue,
-				Email = CustomerEmail.Text,
-				Phone = CustomerPhone.Text,
-				Notes = CustomerNotes.Text,
-				ContactName = ContactName.Text,
-				ContactPhone = CustomerPhone.Text,
-				ContactEmail = CustomerEmail.Text
+                Name = CustomerName.Text,
+                Email = CustomerEmail.Text,
+                Phone = CustomerPhone.Text,
+                Notes = CustomerNotes.Text,
+	            CompleteAddress = new CustomerAddress //Modified to use the sub objects
+                {
+                    Address = CustomerAddress.Text,
+                    City = CustomerCity.Text,
+                    State = StateDropDownList.SelectedValue,
+                    Zip = CustomerZip.Text,
+                    Country = CountryDropDownList.SelectedValue,
+                },
+				Contact = new CustomerContact //Modified to use the sub objects
+				{
+                    Name = ContactName.Text,
+                    Phone = CustomerPhone.Text,
+                    Email = CustomerEmail.Text
+                }
 			};
 
 			var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
-			var customerService = testContainer.GetInstance<ICustomerService>();
-			customerService.AddCustomer(customer);
+			var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
+            customerServiceWrite.AddCustomer(customer);
 			customers.Add(customer);
 
 			CustomersDDL.Items.Add(new ListItem(customer.Name));
+			ResetForm();
 
-			CustomerName.Text = string.Empty;
-			CustomerAddress.Text = string.Empty;
-			CustomerEmail.Text = string.Empty;
-			CustomerPhone.Text = string.Empty;
-			CustomerCity.Text = string.Empty;
-			StateDropDownList.SelectedIndex = 0;
-			CustomerZip.Text = string.Empty;
-			CountryDropDownList.SelectedIndex = 0;
-			CustomerNotes.Text = string.Empty;
-			ContactName.Text = string.Empty;
-			ContactPhone.Text = string.Empty;
-			ContactEmail.Text = string.Empty;
-		}
+        }
+
+
+        //Added a reset form method to clean up AddButton_Click
+        private void ResetForm()
+		{
+            CustomerName.Text = string.Empty;
+            CustomerAddress.Text = string.Empty;
+            CustomerEmail.Text = string.Empty;
+            CustomerPhone.Text = string.Empty;
+            CustomerCity.Text = string.Empty;
+            StateDropDownList.SelectedIndex = 0;
+            CustomerZip.Text = string.Empty;
+            CountryDropDownList.SelectedIndex = 0;
+            CustomerNotes.Text = string.Empty;
+            ContactName.Text = string.Empty;
+            ContactPhone.Text = string.Empty;
+            ContactEmail.Text = string.Empty;
+        }
 	}
 }
