@@ -14,6 +14,7 @@ using System.Security.Policy;
 using System.Web.Security;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
+using assessment_platform_developer.Validators;
 
 namespace assessment_platform_developer
 {
@@ -113,7 +114,6 @@ namespace assessment_platform_developer
         protected void AddButton_Click(object sender, EventArgs e)
 		{
             AddCustomer();
-            ResetForm();
         }
 
         protected void EditButton_Click(object sender, EventArgs e)
@@ -167,35 +167,40 @@ namespace assessment_platform_developer
             var customerServiceRead = testContainer.GetInstance<ICustomerServiceRead>();
             var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
 
-            var customer = new Customer
+            if (Page.IsValid)
             {
-                ID = customerServiceRead.GetNextID(),
-                Name = CustomerName.Text,
-                Email = CustomerEmail.Text,
-                Phone = CustomerPhone.Text,
-                Notes = CustomerNotes.Text,
-                CompleteAddress = new CustomerAddress //Modified to use the sub objects
+                var customer = new Customer
                 {
-                    Address = CustomerAddress.Text,
-                    City = CustomerCity.Text,
-                    State = StateDropDownList.SelectedValue,
-                    Zip = CustomerZip.Text,
-                    Country = CountryDropDownList.SelectedValue,
-                },
-                Contact = new CustomerContact //Modified to use the sub objects
-                {
-                    Title = ContactTitle.Text, //I added the title field
-                    Name = ContactName.Text,
-                    Phone = ContactPhone.Text, //These two were in error, I pointed them to the right fields
-                    Email = ContactEmail.Text, //These two were in error, I pointed them to the right fields
-                    Notes = ContactNotes.Text, //I added the notes field
-                }
-            };
+                    ID = customerServiceRead.GetNextID(),
+                    Name = CustomerName.Text,
+                    Email = CustomerEmail.Text,
+                    Phone = CustomerPhone.Text,
+                    Notes = CustomerNotes.Text,
+                    CompleteAddress = new CustomerAddress //Modified to use the sub objects
+                    {
+                        Address = CustomerAddress.Text,
+                        City = CustomerCity.Text,
+                        State = StateDropDownList.SelectedValue,
+                        Zip = CustomerZip.Text,
+                        Country = CountryDropDownList.SelectedValue,
+                    },
+                    Contact = new CustomerContact //Modified to use the sub objects
+                    {
+                        Title = ContactTitle.Text, //I added the title field
+                        Name = ContactName.Text,
+                        Phone = ContactPhone.Text, //These two were in error, I pointed them to the right fields
+                        Email = ContactEmail.Text, //These two were in error, I pointed them to the right fields
+                        Notes = ContactNotes.Text, //I added the notes field
+                    }
+                };              
 
-            customerServiceWrite.AddCustomer(customer);
-            customers.Add(customer);
+                customerServiceWrite.AddCustomer(customer);
+                customers.Add(customer);
 
-            Utilities.DropDownUtils.AddOneCustomerToDropDown(CustomersDDL, customer);
+                Utilities.DropDownUtils.AddOneCustomerToDropDown(CustomersDDL, customer);
+                ResetForm();
+            }
+
         }
 
         private void EditCustomer()
@@ -203,33 +208,36 @@ namespace assessment_platform_developer
             var testContainer = (Container)HttpContext.Current.Application["DIContainer"];
             var customerServiceWrite = testContainer.GetInstance<ICustomerServiceWrite>();
 
-            if (currentCustomer != null)
+            if (Page.IsValid)
             {
-                currentCustomer.Name = CustomerName.Text;
-                currentCustomer.Email = CustomerEmail.Text;
-                currentCustomer.Phone = CustomerPhone.Text;
-                currentCustomer.Notes = CustomerNotes.Text;
-                currentCustomer.CompleteAddress.Address = CustomerAddress.Text;
-                currentCustomer.CompleteAddress.City = CustomerCity.Text;
-                currentCustomer.CompleteAddress.State = StateDropDownList.SelectedValue;
-                currentCustomer.CompleteAddress.Zip = CustomerZip.Text;
-                currentCustomer.CompleteAddress.Country = CountryDropDownList.SelectedValue;
-                currentCustomer.Contact.Title = ContactTitle.Text;
-                currentCustomer.Contact.Name = ContactName.Text;
-                currentCustomer.Contact.Phone = ContactPhone.Text;
-                currentCustomer.Contact.Email = ContactEmail.Text;
-                currentCustomer.Contact.Notes = ContactNotes.Text;
-
-                customerServiceWrite.UpdateCustomer(currentCustomer);
-                for (int i = 0; i < customers.Count; i++)
+                if (currentCustomer != null)
                 {
-                    if (customers[i].ID == currentCustomer.ID)
-                    {
-                        customers[i] = currentCustomer;
-                    }
-                }
+                    currentCustomer.Name = CustomerName.Text;
+                    currentCustomer.Email = CustomerEmail.Text;
+                    currentCustomer.Phone = CustomerPhone.Text;
+                    currentCustomer.Notes = CustomerNotes.Text;
+                    currentCustomer.CompleteAddress.Address = CustomerAddress.Text;
+                    currentCustomer.CompleteAddress.City = CustomerCity.Text;
+                    currentCustomer.CompleteAddress.State = StateDropDownList.SelectedValue;
+                    currentCustomer.CompleteAddress.Zip = CustomerZip.Text;
+                    currentCustomer.CompleteAddress.Country = CountryDropDownList.SelectedValue;
+                    currentCustomer.Contact.Title = ContactTitle.Text;
+                    currentCustomer.Contact.Name = ContactName.Text;
+                    currentCustomer.Contact.Phone = ContactPhone.Text;
+                    currentCustomer.Contact.Email = ContactEmail.Text;
+                    currentCustomer.Contact.Notes = ContactNotes.Text;
 
-                CustomersDDL.Items[CustomersDDL.SelectedIndex].Text= CustomerName.Text;
+                    customerServiceWrite.UpdateCustomer(currentCustomer);
+                    for (int i = 0; i < customers.Count; i++)
+                    {
+                        if (customers[i].ID == currentCustomer.ID)
+                        {
+                            customers[i] = currentCustomer;
+                        }
+                    }
+
+                    CustomersDDL.Items[CustomersDDL.SelectedIndex].Text = CustomerName.Text;
+                }
             }
         }
 
@@ -269,6 +277,21 @@ namespace assessment_platform_developer
             AddButton.Enabled = true;
             EditButton.Enabled = false;
             DeleteButton.Enabled = false;
+        }
+
+        protected void CustomerZipValidation_Validate(object source, ServerValidateEventArgs args)
+        {
+            try
+            {
+                ZipPostalValidator zipPostalValidator = new ZipPostalValidator();
+
+                args.IsValid = zipPostalValidator.IsCorrectPostalForCountry(args.Value, CountryDropDownList.SelectedItem.Text);
+            }
+
+            catch (Exception ex)
+            {
+                args.IsValid = false;
+            }
         }
     }
 }

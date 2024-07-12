@@ -60,6 +60,15 @@ namespace assessment_platform_developer
         protected global::System.Web.UI.WebControls.TextBox CustomerName;
 
         /// <summary>
+        /// reqName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqName;
+
+        /// <summary>
         /// CustomerAddressLabel control.
         /// </summary>
         /// <remarks>
@@ -96,6 +105,15 @@ namespace assessment_platform_developer
         protected global::System.Web.UI.WebControls.TextBox CustomerEmail;
 
         /// <summary>
+        /// regexEmailValid1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid1;
+
+        /// <summary>
         /// CustomerPhoneLabel control.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace assessment_platform_developer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CustomerPhone;
+
+        /// <summary>
+        /// RegularExpressionValidatorPhone1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorPhone1;
 
         /// <summary>
         /// CustomerCityLabel control.
@@ -166,6 +193,15 @@ namespace assessment_platform_developer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CustomerZip;
+
+        /// <summary>
+        /// CustomerZipValidation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomerZipValidation;
 
         /// <summary>
         /// CustomerCountryLabel control.
@@ -240,6 +276,15 @@ namespace assessment_platform_developer
         protected global::System.Web.UI.WebControls.TextBox ContactName;
 
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
         /// ContactEmailLabel control.
         /// </summary>
         /// <remarks>
@@ -258,6 +303,15 @@ namespace assessment_platform_developer
         protected global::System.Web.UI.WebControls.TextBox ContactEmail;
 
         /// <summary>
+        /// regexEmailValid2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid2;
+
+        /// <summary>
         /// ContactPhoneLabel control.
         /// </summary>
         /// <remarks>
@@ -274,6 +328,15 @@ namespace assessment_platform_developer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ContactPhone;
+
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
         /// ContactNotesLabel control.

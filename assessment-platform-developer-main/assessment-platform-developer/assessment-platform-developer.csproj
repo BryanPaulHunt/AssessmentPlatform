@@ -242,6 +242,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Validators\ZipPostalValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\customers.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\customers.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\customers.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\customers.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\repositories\\customerrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\repositories\\customerrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\validators\\zippostalvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\validators\\zippostalvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\customers.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\customers.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\repositories\\customerrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\repositories\\customerrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\repositories\\customerrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\repositories\\customerrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\models\\customercontact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\services\\customerservicewrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\services\\customerservicewrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\repositories\\customerrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|solutionrelative:assessment-platform-developer\\repositories\\customerrepositoryread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB0C76FD-DE18-4332-A0E8-EC9399D928E0}|assessment-platform-developer\\assessment-platform-developer.csproj|d:\\development\\projects\\assessmentplatform\\assessment-platform-developer-main\\assessment-platform-developer\\repositories\\interfaces\\icustomerrepositorywrite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,24 +102,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CustomerRepositoryRead.cs",
-              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
-              "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
-              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
-              "RelativeToolTip": "assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAmwBcAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "ZipPostalValidator.cs",
+              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "RelativeDocumentMoniker": "assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "RelativeToolTip": "assessment-platform-developer\\Validators\\ZipPostalValidator.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAACMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T16:37:57.997Z",
+              "WhenOpened": "2024-07-12T21:17:22.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CustomerRepositoryWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\CustomerRepositoryWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\CustomerRepositoryWrite.cs",
@@ -128,20 +132,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Customers.aspx.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Customers.aspx.cs",
               "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx.cs",
               "RelativeToolTip": "assessment-platform-developer\\Customers.aspx.cs",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAzwNEAAAA7AAAA",
+              "ViewState": "AQIAALUAAAAAAAAAAAApwMEAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-11T20:51:04.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Customer.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\Customer.cs",
@@ -154,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CustomerContact.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\CustomerContact.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\CustomerContact.cs",
@@ -167,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Customers.aspx",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Customers.aspx",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Customers.aspx",
@@ -180,7 +184,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "CustomerRepositoryRead.cs",
+              "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
+              "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
+              "ToolTip": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
+              "RelativeToolTip": "assessment-platform-developer\\Repositories\\CustomerRepositoryRead.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAmwBEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T16:37:57.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ICustomerRepositoryWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\Interfaces\\ICustomerRepositoryWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\Interfaces\\ICustomerRepositoryWrite.cs",
@@ -193,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CustomerServiceWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Services\\CustomerServiceWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Services\\CustomerServiceWrite.cs",
@@ -206,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CustomerServiceRead.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Services\\CustomerServiceRead.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Services\\CustomerServiceRead.cs",
@@ -219,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ICustomerServiceWrite.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Services\\Interfaces\\ICustomerServiceWrite.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Services\\Interfaces\\ICustomerServiceWrite.cs",
@@ -232,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DropDownUtils.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Utilities\\DropDownUtils.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Utilities\\DropDownUtils.cs",
@@ -245,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ICustomerServiceRead.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Services\\Interfaces\\ICustomerServiceRead.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Services\\Interfaces\\ICustomerServiceRead.cs",
@@ -258,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ICustomerRepositoryRead.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\Interfaces\\ICustomerRepositoryRead.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\Interfaces\\ICustomerRepositoryRead.cs",
@@ -271,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Database.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Repositories\\Database.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Repositories\\Database.cs",
@@ -284,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "CustomerAddress.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\CustomerAddress.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\CustomerAddress.cs",
@@ -297,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Identity.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\Identity.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\Identity.cs",
@@ -310,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IIdentifyable.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\Interfaces\\IIdentifyable.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\Interfaces\\IIdentifyable.cs",
@@ -323,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "IAddress.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\Interfaces\\IAddress.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\Interfaces\\IAddress.cs",
@@ -336,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Countries.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\Countries.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\Countries.cs",
@@ -349,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "StatesProvinces.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\StatesProvinces.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\StatesProvinces.cs",
@@ -362,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "CustomerDBContext.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer\\Models\\CustomerDBContext.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer\\Models\\CustomerDBContext.cs",
@@ -375,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "D:\\Development\\Projects\\AssessmentPlatform\\assessment-platform-developer-main\\assessment-platform-developer.Tests\\UnitTest1.cs",
               "RelativeDocumentMoniker": "assessment-platform-developer.Tests\\UnitTest1.cs",

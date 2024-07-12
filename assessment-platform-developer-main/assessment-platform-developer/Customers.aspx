@@ -14,7 +14,6 @@
 
 	<webopt:bundlereference runat="server" path="~/Content/css" />
 	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body>
 <form id="form1" runat="server">
@@ -66,98 +65,161 @@
 		<div class="container body-content">
 			<div class="card">
 
-				<div class="card-body">
+				<div class="">
+					<div class="card-body">
+					
+						<div class="row justify-content-center">
 
-					<div class="row justify-content-center">
+							<div class="col-md-6">
+								<h1><asp:Label ID="FormTitle" runat="server" Text="Add customer" CssClass="form-label"></asp:Label></h1>
+								<div class="form-group">
+									<asp:Label ID="CustomerNameLabel" runat="server" Text="Name" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="CustomerName" runat="server" CssClass="form-control"></asp:TextBox>
+									<asp:RequiredFieldValidator ID="reqName" 
+										ControlToValidate="CustomerName" 
+										runat="server" ErrorMessage="Required Field"
+										ForeColor="red"
+										Font-Names="verdana" 
+										Font-Size="10pt">
+									</asp:RequiredFieldValidator>
+								
+								</div>
 
-						<div class="col-md-6">
-							<h1><asp:Label ID="FormTitle" runat="server" Text="Add customer" CssClass="form-label"></asp:Label></h1>
-							<div class="form-group">
-								<asp:Label ID="CustomerNameLabel" runat="server" Text="Name" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="CustomerName" runat="server" CssClass="form-control"></asp:TextBox>
+								<div class="form-group">
+									<asp:Label ID="CustomerAddressLabel" runat="server" Text="Address" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="CustomerAddress" runat="server" CssClass="form-control"></asp:TextBox>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="CustomerEmailLabel" runat="server" Text="Email" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="CustomerEmail" runat="server" CssClass="form-control"></asp:TextBox>
+									<asp:RegularExpressionValidator ID="regexEmailValid1" 
+										runat="server" 
+										ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+										ControlToValidate="CustomerEmail"
+										ErrorMessage="Invalid Email Format"
+										ForeColor="red"
+										Font-Names="verdana" 
+										Font-Size="10pt">
+									</asp:RegularExpressionValidator>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="CustomerPhoneLabel" runat="server" Text="Phone" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="CustomerPhone" runat="server" CssClass="form-control"></asp:TextBox>
+								
+									<asp:RegularExpressionValidator ID="RegularExpressionValidatorPhone1" 
+										runat="server" ErrorMessage="Enter valid Phone number" 
+										ControlToValidate="CustomerPhone" 
+										ValidationExpression= "^([0-9\(\)\/\+ \-]*)$"
+										ForeColor="red"
+									   Font-Names="verdana" 
+									   Font-Size="10pt">
+									</asp:RegularExpressionValidator>
+
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="CustomerCityLabel" runat="server" Text="City" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="CustomerCity" runat="server" CssClass="form-control"></asp:TextBox>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="CustomerStateLabel" runat="server" Text="Province/State" CssClass="form-label"></asp:Label>
+									<asp:DropDownList ID="StateDropDownList" runat="server" CssClass="form-control"/>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="CustomerZipLabel" runat="server" Text="Postal/Zip Code" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="CustomerZip" runat="server" CssClass="form-control"></asp:TextBox>
+								      <asp:CustomValidator id="CustomerZipValidation"
+									   ControlToValidate="CustomerZip"
+									   Display="Static"
+									   ErrorMessage="Invalid Postal Code"
+									   ForeColor="red"
+									   Font-Names="verdana" 
+									   Font-Size="10pt"
+									   OnServerValidate="CustomerZipValidation_Validate"
+									   runat="server"/>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="CustomerCountryLabel" runat="server" Text="Country" CssClass="form-label"></asp:Label>
+									<asp:DropDownList ID="CountryDropDownList" runat="server" AutoPostBack="True"  CssClass="form-control" OnSelectedIndexChanged="CountryDropDownList_SelectedIndexChanged"/>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="CustomerNotesLabel" runat="server" Text="Notes" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="CustomerNotes" runat="server" CssClass="form-control"></asp:TextBox>
+								</div>
+
+								<h1>Customer contact details</h1>
+								<div class="form-group">
+									<asp:Label ID="ContactTitleLabel" runat="server" Text="Title" CssClass="form-label"></asp:Label>
+									<asp:DropDownList ID="ContactTitle" runat="server" CssClass="form-control">
+										<asp:ListItem Text= "Mr." Value="Mr."/>
+										<asp:ListItem Text= "Mrs." Value="Mrs."/>
+										<asp:ListItem Text= "Ms." Value="Ms."/>
+										<asp:ListItem Text= "Dr." Value="Dr."/>
+										<asp:ListItem Text= "Captain" Value="Captain"/>
+										<asp:ListItem Text= "Sir" Value="Sir"/>
+										<asp:ListItem Text= "Lady" Value="Lady"/>
+									</asp:DropDownList>
+								</div>
+								<div class="form-group">
+									<asp:Label ID="ContactNameLabel" runat="server" Text="Name" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="ContactName" runat="server" CssClass="form-control"></asp:TextBox>
+									<asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+										ControlToValidate="ContactName" 
+										runat="server" ErrorMessage="Required Field"
+										ForeColor="red"
+										Font-Names="verdana" 
+										Font-Size="10pt">
+									</asp:RequiredFieldValidator>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="ContactEmailLabel" runat="server" Text="Email" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="ContactEmail" runat="server" CssClass="form-control"></asp:TextBox>
+									<asp:RegularExpressionValidator ID="regexEmailValid2" 
+										runat="server" 
+										ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+										ControlToValidate="ContactEmail"
+										ErrorMessage="Invalid Email Format"
+										ForeColor="red"
+										Font-Names="verdana" 
+										Font-Size="10pt">
+									</asp:RegularExpressionValidator>
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="ContactPhoneLabel" class="col-form-label" runat="server" Text="Phone" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="ContactPhone" runat="server" CssClass="form-control"></asp:TextBox>
+									<asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
+										runat="server" ErrorMessage="Enter valid Phone number" 
+										ControlToValidate="CustomerPhone" 
+										ValidationExpression= "^([0-9\(\)\/\+ \-]*)$"
+										ForeColor="red"
+									   Font-Names="verdana" 
+									   Font-Size="10pt">
+									</asp:RegularExpressionValidator>
+									
+								</div>
+
+								<div class="form-group">
+									<asp:Label ID="ContactNotesLabel" class="col-form-label" runat="server" Text="Notes" CssClass="form-label"></asp:Label>
+									<asp:TextBox ID="ContactNotes" runat="server" CssClass="form-control"></asp:TextBox>
+								</div>
+
+								<div class="form-group">
+									<asp:Button ID="AddButton" class="btn btn-primary btn-md" runat="server" Text="Add" OnClick="AddButton_Click" />
+									<asp:Button ID="EditButton" class="btn btn-primary btn-md" runat="server" Text="Update" OnClick="EditButton_Click" />
+									<asp:Button ID="DeleteButton" class="btn btn-primary btn-md" runat="server" Text="Delete" OnClick="DeleteButton_Click" />
 							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerAddressLabel" runat="server" Text="Address" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="CustomerAddress" runat="server" CssClass="form-control"></asp:TextBox>
 							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerEmailLabel" runat="server" Text="Email" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="CustomerEmail" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerPhoneLabel" runat="server" Text="Phone" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="CustomerPhone" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerCityLabel" runat="server" Text="City" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="CustomerCity" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerStateLabel" runat="server" Text="Province/State" CssClass="form-label"></asp:Label>
-								<asp:DropDownList ID="StateDropDownList" runat="server" CssClass="form-control"/>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerZipLabel" runat="server" Text="Postal/Zip Code" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="CustomerZip" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerCountryLabel" runat="server" Text="Country" CssClass="form-label"></asp:Label>
-								<asp:DropDownList ID="CountryDropDownList" runat="server" AutoPostBack="True"  CssClass="form-control" OnSelectedIndexChanged="CountryDropDownList_SelectedIndexChanged"/>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="CustomerNotesLabel" runat="server" Text="Notes" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="CustomerNotes" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<h1>Customer contact details</h1>
-							<div class="form-group">
-								<asp:Label ID="ContactTitleLabel" runat="server" Text="Title" CssClass="form-label"></asp:Label>
-								<asp:DropDownList ID="ContactTitle" runat="server" CssClass="form-control">
-									<asp:ListItem Text= "Mr." Value="Mr."/>
-									<asp:ListItem Text= "Mrs." Value="Mrs."/>
-									<asp:ListItem Text= "Ms." Value="Ms."/>
-									<asp:ListItem Text= "Dr." Value="Dr."/>
-									<asp:ListItem Text= "Captain" Value="Captain"/>
-									<asp:ListItem Text= "Sir" Value="Sir"/>
-									<asp:ListItem Text= "Lady" Value="Lady"/>
-								</asp:DropDownList>
-							</div>
-							<div class="form-group">
-								<asp:Label ID="ContactNameLabel" runat="server" Text="Name" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="ContactName" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="ContactEmailLabel" runat="server" Text="Email" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="ContactEmail" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="ContactPhoneLabel" class="col-form-label" runat="server" Text="Phone" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="ContactPhone" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Label ID="ContactNotesLabel" class="col-form-label" runat="server" Text="Notes" CssClass="form-label"></asp:Label>
-								<asp:TextBox ID="ContactNotes" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-
-							<div class="form-group">
-								<asp:Button ID="AddButton" class="btn btn-primary btn-md" runat="server" Text="Add" OnClick="AddButton_Click" />
-								<asp:Button ID="EditButton" class="btn btn-primary btn-md" runat="server" Text="Edit" OnClick="EditButton_Click" />
-								<asp:Button ID="DeleteButton" class="btn btn-primary btn-md" runat="server" Text="Delete" OnClick="DeleteButton_Click" />
-						</div>
 						</div>
 					</div>
-				</div>
+				</div>			
 			</div>
 		</div>
 	</div>
